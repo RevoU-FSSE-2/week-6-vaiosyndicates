@@ -87,7 +87,7 @@ Then create the Dockerfile
  
   > Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. This page describes the commands you can use in a Dockerfile.
 
-So the simple eplanation is we can create custom docker image using Dockerfile.
+So the simple explanation is we can create custom docker image using Dockerfile.
 
 ```js
 # Menggunakan base image node:14
@@ -127,7 +127,7 @@ COPY package*.json app.js ./
 ```
 
 Then the docker will run npm install to install all dependecies
-So we don't need to install nom locally
+So we don't need to install nodejs in local pc / machine
 
 ```js
 # Menginstal dependency
@@ -175,43 +175,6 @@ In this case, we use dockerignore to avoid assets, git and cache folder from bui
   The process will show like below
 
   ```
-  PS D:\Tutorial\dockernode> docker build -t dockernode/demoapp:1.0 .
-[+] Building 23.1s (3/3) FINISHED                                                                                                                         docker:default
- => [internal] load .dockerignore                                                                                                                                   5.7s
- => => transferring context: 137B                                                                                                                                   2.2s
- => [internal] load build definition from Dockerfile                                                                                                                5.0s
- => => transferring dockerfile: 341B                                                                                                                                2.0s
- => ERROR [internal] load metadata for docker.io/library/node:alphine                                                                                              14.5s
-------
- > [internal] load metadata for docker.io/library/node:alphine:
-Dockerfile:2
---------------------
-   1 |     # Menggunakan base image node:14
-   2 | >>> FROM node:alphine
-   3 |     # Membuat directory app, setting working directory
-   4 |     WORKDIR /usr/src/app
---------------------
-ERROR: failed to solve: node:alphine: docker.io/library/node:alphine: not found
-PS D:\Tutorial\dockernode> docker build -t dockernode/demoapp:1.0 .
-[+] Building 0.0s (0/0)                                                                                                                                   docker:default
-[+] Building 4.4s (3/3) FINISHED                                                                                                                          docker:default
- => [internal] load build definition from Dockerfile                                                                                                                1.3s
- => => transferring dockerfile: 336B                                                                                                                                0.3s 
- => [internal] load .dockerignore                                                                                                                                   0.9s
- => => transferring context: 137B                                                                                                                                   0.2s
- => ERROR [internal] load metadata for docker.io/library/node:14                                                                                                    0.5s
-------
- > [internal] load metadata for docker.io/library/node:14:
-------
-Dockerfile:2
---------------------
-   2 | >>> FROM node:14
-   3 |     # Membuat directory app, setting working directory
-   4 |     WORKDIR /usr/src/app
---------------------
-ERROR: failed to solve: node:14: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/14": dialing registry-1.docker.io:443 with direct connection: resolving host registry-1.docker.io: lookup registry-1.docker.io: no such host
-PS D:\Tutorial\dockernode> ^C
-PS D:\Tutorial\dockernode> ^C
 PS D:\Tutorial\dockernode> docker build -t dockernode/demoapp:1.0 .
 [+] Building 205.8s (10/10) FINISHED                                                                                                                      docker:default
  => [internal] load .dockerignore                                                                                                                                   4.6s
